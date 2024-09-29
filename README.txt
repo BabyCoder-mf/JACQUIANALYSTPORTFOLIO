@@ -1,32 +1,38 @@
-Massively by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# Ntare Jacquiline Analyst Portfolio
 
+Welcome to my portfolio! I am a passionate data analyst with expertise in various data visualization and analysis tools, including Excel, Power BI, Tableau, and SQL. My projects demonstrate my skills in data transformation, exploration, and machine learning.
 
-This is Massively, a text-heavy, article-oriented design built around a huge background
-image (with a new parallax implementation I'm testing) and scroll effects (powered by
-Scrollex). A *slight* departure from all the one-pagers I've been doing lately, but one
-that fulfills a few user requests and makes use of some new techniques I've been wanting
-to try out. Enjoy it :)
+## Projects
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+### 1. Data Transformation with SQL
+- **Description:** This project showcases my proficiency in SQL, where I retrieve, manipulate, analyze, and transfer data for visualizations.
+- **Link:** [View SQL Queries](https://github.com/BabyCoder-mf/SQL.COVID-19/tree/main/COVID-19%20E.A)
 
-(* = not included)
+### 2. Data Exploration in SQL
+- **Description:** This project contains SQL queries I executed to retrieve data from the COVID-19 dataset for East African countries.
+- **Link:** [View Project](https://github.com/BabyCoder-mf/SQL.COVID-19/blob/main/COVID-19%20E.A/E.A.C-%20Covid-19.sql)
 
-AJ
-aj@lkn.io | @ajlkn
+### 3. Bikesales Dashboard with Excel
+- **Description:** A dashboard developed using Excel and Pivot Tables to visualize bikesales data effectively.
+- **Link:** [View Project](https://1drv.ms/x/s!An154pBeqri4tVW3QGNwgLmaL9sj)
 
+### 4. KFC Dashboard with Power BI
+- **Description:** A comprehensive dashboard showcasing insights about the KFC franchise, designed for potential investors.
+- **Link:** [View Project](https://bit.ly/3PwRwk9)
 
-Credits:
+### 5. E.A.C COVID-19 Dashboard with Tableau
+- **Description:** A Tableau dashboard visualizing COVID-19 statistics in East Africa, providing insights into the pandemic's impact.
+- **Link:** [View Project](https://bit.ly/44QP24n)
 
-	Demo Images:
-		Unsplash (unsplash.com)
+### 6. Data Web Scraping Projects
+- **Description:** This section features two distinct web scraping projects: one focusing on extracting data from Kenya Airways and another analyzing Premier League statistics. 
+- **Link:** [View Projects](https://bit.ly/44QP24n)
 
-	Icons:
-		Font Awesome (fontawesome.io)
+### 7. Kaggle - Machine Learning & Data Analysis
+- **Description:** Explore my diverse range of machine learning and data analysis projects showcased on my Kaggle profile.
+- **Link:** [Visit Kaggle Profile](https://www.kaggle.com/your-kaggle-profile)
 
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+## Contact
+Feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/jacquiline-alphans/) or [GitHub](https://github.com/BabyCoder-mf) for collaboration or inquiries.
+
+Thank you for visiting my portfolio!
