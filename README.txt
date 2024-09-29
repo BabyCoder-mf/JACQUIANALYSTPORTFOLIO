@@ -26,11 +26,11 @@ Welcome to my portfolio! I am a passionate data analyst with expertise in variou
 
 ### 6. Data Web Scraping Projects
 - **Description:** This section features two distinct web scraping projects: one focusing on extracting data from Kenya Airways and another analyzing Premier League statistics. 
-- **Link:** [View Projects](https://bit.ly/44QP24n)
+- **Link:** [https://github.com/BabyCoder-mf/WEB_SCRAPING)
 
 ### 7. Kaggle - Machine Learning & Data Analysis
 - **Description:** Explore my diverse range of machine learning and data analysis projects showcased on my Kaggle profile.
-- **Link:** [Visit Kaggle Profile](https://www.kaggle.com/your-kaggle-profile)
+- **Link:** [https://www.kaggle.com/work/code)
 
 ## Contact
 Feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/jacquiline-alphans/) or [GitHub](https://github.com/BabyCoder-mf) for collaboration or inquiries.
