@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Massively by HTML5 UP (Modified for Portfolio)
 -->
 <html>
 	<head>
@@ -11,6 +9,179 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom additions that work with Massively theme */
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+				gap: 2rem;
+				padding: 2rem 0;
+			}
+
+			.project-card {
+				background: #ffffff;
+				border: solid 2px #eeeeee;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.project-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+				border-color: #18bfef;
+			}
+
+			.project-card .image {
+				margin: 0;
+				border-bottom: solid 2px #eeeeee;
+			}
+
+			.project-card .image img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+			}
+
+			.project-card .card-content {
+				padding: 1.5rem;
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.project-card h3 {
+				font-size: 1.25rem;
+				margin-bottom: 0.75rem;
+				color: #212931;
+			}
+
+			.project-card p {
+				font-size: 0.9rem;
+				line-height: 1.8;
+				margin-bottom: 1.5rem;
+				flex-grow: 1;
+				color: #717981;
+			}
+
+			.project-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-tag {
+				font-family: "Source Sans Pro", Helvetica, sans-serif;
+				font-size: 0.7rem;
+				font-weight: 900;
+				letter-spacing: 0.075em;
+				text-transform: uppercase;
+				padding: 0.25rem 0.75rem;
+				background: #f5f5f5;
+				color: #717981;
+				border: solid 1px #eeeeee;
+			}
+
+			.project-card .button {
+				margin-top: auto;
+				width: 100%;
+				text-align: center;
+				font-size: 0.7rem;
+				padding: 0 1rem;
+			}
+
+			.featured-project {
+				margin-bottom: 3rem;
+				background: linear-gradient(135deg, #212931 0%, #2d3a47 100%);
+				border: solid 2px #eeeeee;
+				padding: 3rem;
+				color: white;
+			}
+
+			.featured-project h2 {
+				color: white;
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.featured-project p {
+				color: rgba(255,255,255,0.8);
+			}
+
+			.featured-project .project-tag {
+				background: rgba(255,255,255,0.2);
+				color: white;
+				border-color: rgba(255,255,255,0.3);
+			}
+
+			.featured-project .button {
+				background-color: white;
+				box-shadow: none;
+				color: #212931 !important;
+			}
+
+			.featured-project .button:hover {
+				background-color: #18bfef;
+				color: white !important;
+			}
+
+			.contact-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 2rem;
+				padding: 2rem 0;
+			}
+
+			.contact-item {
+				text-align: center;
+				padding: 2rem;
+				background: #f5f5f5;
+				border: solid 2px #eeeeee;
+			}
+
+			.contact-item .icon {
+				font-size: 2rem;
+				margin-bottom: 1rem;
+				display: block;
+				color: #212931;
+			}
+
+			.contact-item h3 {
+				margin: 0.5rem 0;
+				font-size: 1rem;
+				color: #212931;
+			}
+
+			.contact-item p, .contact-item a {
+				color: #717981;
+				text-decoration: none;
+				font-size: 0.9rem;
+			}
+
+			.contact-item a:hover {
+				color: #18bfef;
+			}
+
+			@media screen and (max-width: 736px) {
+				.projects-grid {
+					grid-template-columns: 1fr;
+				}
+				
+				.featured-project {
+					padding: 2rem;
+				}
+				
+				.featured-project h2 {
+					font-size: 1.75rem;
+				}
+				
+				.contact-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -19,187 +190,197 @@
 
 				<!-- Intro -->
 					<div id="intro">
-						<h1> NTARE JACQUILINE ANALYST PORTFOLIO<br />
-						</h1>
-						<p> Verse in Excel, PowerBI, Tableau, and SQL. <a href=""></a>.</p>
+						<h1>NTARE JACQUILINE<br />ANALYST PORTFOLIO</h1>
+						<p>Data Analyst specializing in Excel, PowerBI, Tableau, and SQL</p>
 						<ul class="actions">
-							<li><a href="#" class="button icon solid solo fa-arrow-down scrolly"></a></li>
+							<li><a href="#main" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
-
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
 							<li class="active"><a href="index.html">Projects</a></li>
-
 						</ul>
 						<ul class="icons">
 							<li><a href="https://github.com/BabyCoder-mf" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="https://www.linkedin.com/in/jacquiline-alphans/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
+							<li><a href="https://www.linkedin.com/in/jacquiline-alphans/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="#">DATA TRANSFORMATION WITH SQL<br /></a></h2>
+						<!-- Featured Project -->
+						<div class="featured-project">
+							<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+								<div>
+									<h2>DATA TRANSFORMATION WITH SQL</h2>
 									<p>Illustrates my proficiency in SQL; retrieve, manipulate, analyze and transfer data for visualizations.</p>
-								</header>
-								<a href="#" class="image main"><img src="images/R.png" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/BabyCoder-mf/SQL.COVID-19/tree/main/COVID-19%20E.A" class="button large">VIEW SQL QUERIES</a></li>
-								</ul>
+									<div class="project-tags" style="margin-bottom: 2rem;">
+										<span class="project-tag">SQL</span>
+										<span class="project-tag">Data Analysis</span>
+										<span class="project-tag">ETL</span>
+									</div>
+									<a href="https://github.com/BabyCoder-mf/SQL.COVID-19/tree/main/COVID-19%20E.A" class="button primary">VIEW SQL QUERIES</a>
+								</div>
+								<div>
+									<img src="images/R.png" alt="SQL Project" style="width: 100%; border: solid 2px rgba(255,255,255,0.2);" />
+								</div>
+							</div>
+						</div>
+
+						<!-- Projects Grid -->
+						<div class="projects-grid">
+							<!-- Data Exploration in SQL -->
+							<article class="project-card">
+								<a href="#" class="image fit"><img src="images/sqlqu.jpg" alt="" /></a>
+								<div class="card-content">
+									<h3>DATA EXPLORATION IN SQL</h3>
+									<p>SQL queries for COVID-19 dataset analysis across East African Countries</p>
+									<div class="project-tags">
+										<span class="project-tag">SQL</span>
+										<span class="project-tag">Exploration</span>
+									</div>
+									<a href="https://github.com/BabyCoder-mf/SQL.COVID-19/blob/main/COVID-19%20E.A/E.A.C-%20Covid-19.sql" class="button">VIEW PROJECT</a>
+								</div>
 							</article>
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<h2><a href="#">DATA EXPLORATION IN SQL </a></h2>
-									</header>
-									<a href="" class="image fit"><img src="images/sqlqu.jpg" alt="" /></a>
-									<p>In here contains sql queries I executed to retrieve data for COVID-19 dataset for East African Countries </p>
-									<ul class="actions special">
-										<li><a href="https://github.com/BabyCoder-mf/SQL.COVID-19/blob/main/COVID-19%20E.A/E.A.C-%20Covid-19.sql" class="button">VIEW PROJECT</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">BIKE SALES DASHBOARD WITH EXCEL</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/R (1).jpeg" alt="" /></a>
-									<p>View a Bike Sales dashboard I developed and designed using Excel and pivot tables to visualize data.</p>
-									<ul class="actions special">
-										<li><a href="https://1drv.ms/x/s!An154pBeqri4tVW3QGNwgLmaL9sj" class="button">VIEW PROJECT</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-		
-										<h2><a href="#">KFC DASHBOARD WITH BI</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/KFC-1000x600.jpg" alt="" /></a>
-									<p>With my data analysis skills I developed and designed a dashboard showing facts and figures of the KFC Franchise. This gives valuable insights to investors.</p>
-									<ul class="actions special">
-										<li><a href=" https://bit.ly/3PwRwk9" class="button">VIEW PROJECT</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">E.A.C COVID-19 DASHBOARD WITH TABLEAU</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/OIP.jpeg" alt="" /></a>
-									<p> Visualize COVID-19 in East Africa</p>
-									<ul class="actions special">
-										<li><a href="https://bit.ly/44QP24n" class="button">VIEW PROJECT</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">WEB SCRAPING PROJECTS</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/images.jpeg" alt="" /></a>
-									<p> This section features two distinct web scraping projects: one focusing on extracting data from Kenya Airways, and another analyzing Premier League statistics. 
-									These projects demonstrate my ability to gather and analyze data from various web sources for insightful reporting.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/BabyCoder-mf/WEB_SCRAPING" class="button">VIEW PROJECT</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">AI CHATBOT DEVELOPMENT</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/logo.png" alt="" /></a>
-									<p> This project involves developing an AI chatbot to assist with various queries and enhance user interaction.</p>
-									<ul class="actions special">
-										<li><a href="--" class="button">VIEW PROJECT</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">KAGGLE - MACHINE LEARNING & DATA ANALYSIS</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/ml.icon.jpg" alt="" /></a>
-									<p> Explore my diverse range of machine learning and data analysis projects showcased on my Kaggle profile. 
-									These projects encompass various techniques and methodologies to solve real-world problems using data.</p>
-									<ul class="actions special">
-										<li><a href="https://www.kaggle.com/work/code" class="button">VIEW PROJECT</a></li>
-									</ul>
-								</article>
-							</section>
+							<!-- Bike Sales Dashboard -->
+							<article class="project-card">
+								<a href="#" class="image fit"><img src="images/R%20(1).jpeg" alt="" /></a>
+								<div class="card-content">
+									<h3>BIKE SALES DASHBOARD</h3>
+									<p>Interactive Excel dashboard using pivot tables for bike sales analysis</p>
+									<div class="project-tags">
+										<span class="project-tag">Excel</span>
+										<span class="project-tag">Dashboard</span>
+									</div>
+									<a href="https://1drv.ms/x/s!An154pBeqri4tVW3QGNwgLmaL9sj" class="button">VIEW PROJECT</a>
+								</div>
+							</article>
+
+							<!-- KFC Dashboard -->
+							<article class="project-card">
+								<a href="#" class="image fit"><img src="images/KFC-1000x600.jpg" alt="" /></a>
+								<div class="card-content">
+									<h3>KFC FRANCHISE DASHBOARD</h3>
+									<p>PowerBI dashboard showing KFC franchise performance metrics and insights</p>
+									<div class="project-tags">
+										<span class="project-tag">PowerBI</span>
+										<span class="project-tag">Analytics</span>
+									</div>
+									<a href="https://bit.ly/3PwRwk9" class="button">VIEW PROJECT</a>
+								</div>
+							</article>
+
+							<!-- EAC COVID-19 Tableau -->
+							<article class="project-card">
+								<a href="#" class="image fit"><img src="images/OIP.jpeg" alt="" /></a>
+								<div class="card-content">
+									<h3>E.A.C COVID-19 DASHBOARD</h3>
+									<p>Tableau visualization of COVID-19 trends in East African Countries</p>
+									<div class="project-tags">
+										<span class="project-tag">Tableau</span>
+										<span class="project-tag">Data Viz</span>
+									</div>
+									<a href="https://bit.ly/44QP24n" class="button">VIEW PROJECT</a>
+								</div>
+							</article>
+
+							<!-- Web Scraping Projects -->
+							<article class="project-card">
+								<a href="#" class="image fit"><img src="images/images.jpeg" alt="" /></a>
+								<div class="card-content">
+									<h3>WEB SCRAPING PROJECTS</h3>
+									<p>Kenya Airways data extraction and Premier League statistics analysis</p>
+									<div class="project-tags">
+										<span class="project-tag">Python</span>
+										<span class="project-tag">Scraping</span>
+									</div>
+									<a href="https://github.com/BabyCoder-mf/WEB_SCRAPING" class="button">VIEW PROJECT</a>
+								</div>
+							</article>
+
+							<!-- AI Chatbot -->
+							<article class="project-card">
+								<a href="#" class="image fit"><img src="images/logo.png" alt="" /></a>
+								<div class="card-content">
+									<h3>AI CHATBOT DEVELOPMENT</h3>
+									<p>Intelligent chatbot for enhanced user interaction and query assistance</p>
+									<div class="project-tags">
+										<span class="project-tag">AI</span>
+										<span class="project-tag">NLP</span>
+									</div>
+									<a href="#" class="button">COMING SOON</a>
+								</div>
+							</article>
+
+							<!-- Kaggle Projects -->
+							<article class="project-card">
+								<a href="#" class="image fit"><img src="images/ml.icon.jpg" alt="" /></a>
+								<div class="card-content">
+									<h3>KAGGLE PROJECTS</h3>
+									<p>Machine learning and data analysis projects showcasing various techniques</p>
+									<div class="project-tags">
+										<span class="project-tag">ML</span>
+										<span class="project-tag">Python</span>
+									</div>
+									<a href="https://www.kaggle.com/work/code" class="button">VIEW PROJECTS</a>
+								</div>
+							</article>
+						</div>
+
+						<!-- Contact Information (No Form) -->
+						<footer style="background: #f5f5f5; padding: 4rem !important; margin-top: 2rem;">
+							<h2 style="text-align: center; margin-bottom: 3rem;">Get In Touch</h2>
+							<div class="contact-grid">
+								<div class="contact-item">
+									<i class="icon solid fa-map-marker-alt"></i>
+									<h3>Location</h3>
+									<p>Nairobi, Kenya</p>
+								</div>
+								<div class="contact-item">
+									<i class="icon solid fa-phone"></i>
+									<h3>Phone</h3>
+									<p>(+254) 748-362-361</p>
+								</div>
+								<div class="contact-item">
+									<i class="icon solid fa-envelope"></i>
+									<h3>Email</h3>
+									<p><a href="mailto:jacquilinentare@gmail.com">jacquilinentare@gmail.com</a></p>
+								</div>
+								<div class="contact-item">
+									<i class="icon brands fa-github"></i>
+									<h3>GitHub</h3>
+									<p><a href="https://github.com/BabyCoder-mf">@BabyCoder-mf</a></p>
+								</div>
+								<div class="contact-item">
+									<i class="icon brands fa-linkedin"></i>
+									<h3>LinkedIn</h3>
+									<p><a href="https://www.linkedin.com/in/jacquiline-alphans/">Jacquiline Alphans</a></p>
+								</div>
+							</div>
+						</footer>
 
 					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Nairobi, Kenya</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(+254)-748-362-361</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:jacquilinentare@gmail.com">jacquilinentare@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://github.com/BabyCoder-mf" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								        <li><a href="https://www.linkedin.com/in/jacquiline-alphans/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
-
-								</ul>
-							</section>
-						</section>
-					</footer>
 
 				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; jacquilinentare</li><li>PORTFOLIO: <a href="https://html5up.net">2023</a></li></ul>
-					</div>
+				<div id="copyright">
+					<ul><li>&copy; jacquilinentare</li><li>Portfolio 2024</li></ul>
+				</div>
 
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-
-			<script src="port.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="port.js"></script>
 
 	</body>
 </html>
-```
