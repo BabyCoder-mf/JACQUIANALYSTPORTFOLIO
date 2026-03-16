@@ -36,12 +36,58 @@
 			.project-card .image {
 				margin: 0;
 				border-bottom: solid 2px #eeeeee;
+				background: #f5f5f5;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 200px;
 			}
 
 			.project-card .image img {
 				width: 100%;
+				height: auto;
+				display: block;
+				/* Remove object-fit: cover and let images keep their natural aspect ratio */
+			}
+
+			/* Option 1: Contain images (shows full image with possible letterboxing) */
+			.project-card .image.contain img {
+				object-fit: contain;
+				max-height: 200px;
+				width: auto;
+				max-width: 100%;
+				margin: 0 auto;
+			}
+
+			/* Option 2: Fill width (crops height if needed but ensures full width) - DEFAULT */
+			.project-card .image.fill img {
+				width: 100%;
 				height: 200px;
 				object-fit: cover;
+			}
+
+			/* Option 3: Auto height (adjusts card height to match image) */
+			.project-card .image.auto img {
+				width: 100%;
+				height: auto;
+			}
+
+			/* For now, let's use a smart approach - different handling for different image types */
+			.project-card .image img {
+				width: 100%;
+				height: auto;
+				min-height: 150px;
+				max-height: 250px;
+				object-fit: contain; /* This ensures full image is visible */
+				background: #f5f5f5;
+				padding: 10px; /* Adds padding for logos/screenshots that need breathing room */
+			}
+
+			/* Special handling for dashboard images that should fill the space */
+			.project-card .image.dashboard img {
+				object-fit: cover;
+				height: 200px;
+				padding: 0;
 			}
 
 			.project-card .card-content {
@@ -127,6 +173,14 @@
 				color: white !important;
 			}
 
+			.featured-project img {
+				width: 100%;
+				height: auto;
+				border: solid 2px rgba(255,255,255,0.2);
+				background: white;
+				padding: 5px;
+			}
+
 			.contact-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -177,6 +231,10 @@
 					font-size: 1.75rem;
 				}
 				
+				.featured-project > div {
+					grid-template-columns: 1fr !important;
+				}
+				
 				.contact-grid {
 					grid-template-columns: 1fr;
 				}
@@ -225,7 +283,7 @@
 									<a href="https://github.com/BabyCoder-mf/SQL.COVID-19/tree/main/COVID-19%20E.A" class="button primary">VIEW SQL QUERIES</a>
 								</div>
 								<div>
-									<img src="images/R.png" alt="SQL Project" style="width: 100%; border: solid 2px rgba(255,255,255,0.2);" />
+									<img src="images/R.png" alt="SQL Project" style="width: 100%; height: auto; border: solid 2px rgba(255,255,255,0.2);" />
 								</div>
 							</div>
 						</div>
