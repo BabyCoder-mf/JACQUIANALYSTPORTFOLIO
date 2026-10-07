@@ -1,7 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP (Modified for Portfolio)
--->
 <html>
 	<head>
 		<title>Jacq.portfolio</title>
@@ -10,7 +7,9 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Custom additions that work with Massively theme */
+			/* ============================================
+			   PROJECTS GRID
+			   ============================================ */
 			.projects-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -41,49 +40,20 @@
 				align-items: center;
 				justify-content: center;
 				min-height: 200px;
+				overflow: hidden;
 			}
 
-			.project-card .image img {
-				width: 100%;
-				height: auto;
-				display: block;
-				/* Remove object-fit: cover and let images keep their natural aspect ratio */
-			}
-
-			/* Option 1: Contain images (shows full image with possible letterboxing) */
-			.project-card .image.contain img {
-				object-fit: contain;
-				max-height: 200px;
-				width: auto;
-				max-width: 100%;
-				margin: 0 auto;
-			}
-
-			/* Option 2: Fill width (crops height if needed but ensures full width) - DEFAULT */
-			.project-card .image.fill img {
-				width: 100%;
-				height: 200px;
-				object-fit: cover;
-			}
-
-			/* Option 3: Auto height (adjusts card height to match image) */
-			.project-card .image.auto img {
-				width: 100%;
-				height: auto;
-			}
-
-			/* For now, let's use a smart approach - different handling for different image types */
 			.project-card .image img {
 				width: 100%;
 				height: auto;
 				min-height: 150px;
 				max-height: 250px;
-				object-fit: contain; /* This ensures full image is visible */
+				object-fit: contain;
 				background: #f5f5f5;
-				padding: 10px; /* Adds padding for logos/screenshots that need breathing room */
+				padding: 10px;
+				display: block;
 			}
 
-			/* Special handling for dashboard images that should fill the space */
 			.project-card .image.dashboard img {
 				object-fit: cover;
 				height: 200px;
@@ -138,49 +108,230 @@
 				padding: 0 1rem;
 			}
 
-			.featured-project {
-				margin-bottom: 3rem;
+			/* ============================================
+			   FLAGSHIP SPOTLIGHT — HR APPLICATION
+			   ============================================ */
+			.flagship-project {
+				margin: 0 0 3rem 0;
 				background: linear-gradient(135deg, #212931 0%, #2d3a47 100%);
 				border: solid 2px #eeeeee;
+				padding: 0;
+				color: white;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.flagship-project::before {
+				content: "★ FLAGSHIP PROJECT";
+				position: absolute;
+				top: 1.5rem;
+				right: -3.5rem;
+				background: #18bfef;
+				color: white;
+				font-family: "Source Sans Pro", Helvetica, sans-serif;
+				font-size: 0.65rem;
+				font-weight: 900;
+				letter-spacing: 0.15em;
+				padding: 0.35rem 4rem;
+				transform: rotate(45deg);
+				z-index: 10;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+			}
+
+			.flagship-project .flagship-inner {
+				display: grid;
+				grid-template-columns: 1.2fr 1fr;
+				gap: 0;
+				align-items: stretch;
+				min-height: 420px;
+			}
+
+			.flagship-project .flagship-content {
 				padding: 3rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.flagship-project h2 {
 				color: white;
+				font-size: 2.25rem;
+				margin-bottom: 0.5rem;
+				line-height: 1.2;
 			}
 
-			.featured-project h2 {
+			.flagship-project .flagship-subtitle {
+				font-family: "Source Sans Pro", Helvetica, sans-serif;
+				font-size: 0.85rem;
+				font-weight: 900;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				color: #18bfef;
+				margin-bottom: 1.25rem;
+				display: block;
+			}
+
+			.flagship-project p {
+				color: rgba(255,255,255,0.85);
+				font-size: 1rem;
+				line-height: 1.9;
+				margin-bottom: 1.5rem;
+			}
+
+			.flagship-project .project-tag {
+				background: rgba(255,255,255,0.15);
 				color: white;
-				font-size: 2.5rem;
-				margin-bottom: 1rem;
+				border-color: rgba(255,255,255,0.25);
 			}
 
-			.featured-project p {
-				color: rgba(255,255,255,0.8);
+			.flagship-project .flagship-actions {
+				display: flex;
+				gap: 1rem;
+				flex-wrap: wrap;
+				margin-top: 0.5rem;
 			}
 
-			.featured-project .project-tag {
-				background: rgba(255,255,255,0.2);
-				color: white;
-				border-color: rgba(255,255,255,0.3);
-			}
-
-			.featured-project .button {
+			.flagship-project .button {
 				background-color: white;
 				box-shadow: none;
 				color: #212931 !important;
+				padding: 0 1.75rem;
 			}
 
-			.featured-project .button:hover {
+			.flagship-project .button:hover {
 				background-color: #18bfef;
 				color: white !important;
 			}
 
-			.featured-project img {
-				width: 100%;
-				height: auto;
-				border: solid 2px rgba(255,255,255,0.2);
-				background: white;
-				padding: 5px;
+			.flagship-project .button.ghost {
+				background-color: transparent;
+				color: white !important;
+				box-shadow: inset 0 0 0 2px rgba(255,255,255,0.5);
 			}
 
+			.flagship-project .button.ghost:hover {
+				background-color: white;
+				color: #212931 !important;
+				box-shadow: none;
+			}
+
+			.flagship-project .flagship-image {
+				background: linear-gradient(135deg, #18bfef 0%, #0a9bc4 100%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 2rem;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.flagship-project .flagship-image img {
+				max-width: 100%;
+				max-height: 350px;
+				width: auto;
+				height: auto;
+				object-fit: contain;
+				border: solid 3px rgba(255,255,255,0.3);
+				box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+				background: white;
+				position: relative;
+				z-index: 2;
+			}
+
+			.flagship-project .flagship-image::after {
+				content: "";
+				position: absolute;
+				top: -50%;
+				left: -50%;
+				width: 200%;
+				height: 200%;
+				background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+				background-size: 20px 20px;
+				opacity: 0.4;
+			}
+
+			/* ============================================
+			   FRONTEND PORTAL CARD
+			   ============================================ */
+			.frontend-portal {
+				grid-column: 1 / -1;
+				margin-top: 1rem;
+				background: linear-gradient(135deg, #18bfef 0%, #0a9bc4 100%);
+				border: solid 2px #18bfef;
+				padding: 3rem 2rem;
+				text-align: center;
+				color: white;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+				display: block;
+				text-decoration: none;
+			}
+
+			.frontend-portal:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 15px 40px rgba(24,191,239,0.4);
+			}
+
+			.frontend-portal::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+				transition: left 0.5s ease;
+			}
+
+			.frontend-portal:hover::before {
+				left: 100%;
+			}
+
+			.frontend-portal .portal-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+				display: block;
+				color: white;
+			}
+
+			.frontend-portal h3 {
+				color: white;
+				font-size: 1.75rem;
+				margin-bottom: 0.5rem;
+				font-family: "Source Sans Pro", Helvetica, sans-serif;
+				font-weight: 900;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+
+			.frontend-portal p {
+				color: rgba(255,255,255,0.9);
+				font-size: 1rem;
+				margin-bottom: 1.5rem;
+			}
+
+			.frontend-portal .portal-cta {
+				display: inline-block;
+				font-family: "Source Sans Pro", Helvetica, sans-serif;
+				font-size: 0.8rem;
+				font-weight: 900;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				color: white;
+				border-bottom: solid 2px rgba(255,255,255,0.5);
+				padding-bottom: 0.25rem;
+				transition: border-color 0.2s ease;
+			}
+
+			.frontend-portal:hover .portal-cta {
+				border-color: white;
+			}
+
+			/* ============================================
+			   CONTACT GRID
+			   ============================================ */
 			.contact-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -193,6 +344,11 @@
 				padding: 2rem;
 				background: #f5f5f5;
 				border: solid 2px #eeeeee;
+				transition: border-color 0.2s ease;
+			}
+
+			.contact-item:hover {
+				border-color: #18bfef;
 			}
 
 			.contact-item .icon {
@@ -218,23 +374,60 @@
 				color: #18bfef;
 			}
 
+			/* ============================================
+			   RESPONSIVE
+			   ============================================ */
+			@media screen and (max-width: 980px) {
+				.flagship-project .flagship-inner {
+					grid-template-columns: 1fr;
+				}
+				.flagship-project .flagship-image {
+					min-height: 280px;
+					order: -1;
+				}
+				.flagship-project::before {
+					font-size: 0.55rem;
+					padding: 0.3rem 3rem;
+					right: -3rem;
+				}
+			}
+
 			@media screen and (max-width: 736px) {
 				.projects-grid {
 					grid-template-columns: 1fr;
 				}
-				
-				.featured-project {
+
+				.flagship-project .flagship-content {
 					padding: 2rem;
 				}
-				
-				.featured-project h2 {
-					font-size: 1.75rem;
+
+				.flagship-project h2 {
+					font-size: 1.6rem;
 				}
-				
-				.featured-project > div {
-					grid-template-columns: 1fr !important;
+
+				.flagship-project .flagship-image {
+					padding: 1.5rem;
 				}
-				
+
+				.flagship-project .flagship-image img {
+					max-height: 220px;
+				}
+
+				.flagship-project::before {
+					top: 1rem;
+					right: -3.5rem;
+					font-size: 0.5rem;
+					padding: 0.25rem 3.5rem;
+				}
+
+				.frontend-portal {
+					padding: 2rem 1.5rem;
+				}
+
+				.frontend-portal h3 {
+					font-size: 1.25rem;
+				}
+
 				.contact-grid {
 					grid-template-columns: 1fr;
 				}
@@ -246,7 +439,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
 
-				<!-- Intro -->
+				<!-- Intro / Hero -->
 					<div id="intro">
 						<h1>NTARE JACQUILINE<br />ANALYST PORTFOLIO</h1>
 						<p>Data Analyst specializing in Excel, PowerBI, Tableau, and SQL</p>
@@ -269,27 +462,43 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Featured Project -->
-						<div class="featured-project">
-							<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
-								<div>
-									<h2>DATA TRANSFORMATION WITH SQL</h2>
-									<p>Illustrates my proficiency in SQL; retrieve, manipulate, analyze and transfer data for visualizations.</p>
-									<div class="project-tags" style="margin-bottom: 2rem;">
-										<span class="project-tag">SQL</span>
-										<span class="project-tag">Data Analysis</span>
-										<span class="project-tag">ETL</span>
+						<!-- ============================================
+						     FLAGSHIP SPOTLIGHT — HR APPLICATION
+						     ============================================ -->
+						<div class="flagship-project">
+							<div class="flagship-inner">
+								<div class="flagship-content">
+									<span class="flagship-subtitle">Full-Stack System · HR Management</span>
+									<h2>HR APPLICATION</h2>
+									<p>
+										A complete, scalable Human Resources management system built end-to-end. 
+										Features employee records, leave management, payroll processing, and 
+										role-based access control. Demonstrates full-stack capability — from 
+										database architecture and backend logic to a responsive, production-ready 
+										user interface.
+									</p>
+									<div class="project-tags">
+										<span class="project-tag">Full-Stack</span>
+										<span class="project-tag">Database</span>
+										<span class="project-tag">REST API</span>
+										<span class="project-tag">UI/UX</span>
 									</div>
-									<a href="https://github.com/BabyCoder-mf/SQL.COVID-19/tree/main/COVID-19%20E.A" class="button primary">VIEW SQL QUERIES</a>
+									<div class="flagship-actions">
+										<a href="#" class="button primary">LIVE DEMO</a>
+										<a href="#" class="button ghost">VIEW CODE</a>
+									</div>
 								</div>
-								<div>
-									<img src="images/R.png" alt="SQL Project" style="width: 100%; height: auto; border: solid 2px rgba(255,255,255,0.2);" />
+								<div class="flagship-image">
+									<img src="images/R.png" alt="HR Application" />
 								</div>
 							</div>
 						</div>
 
-						<!-- Projects Grid -->
+						<!-- ============================================
+						     DATA & ANALYTICS GRID
+						     ============================================ -->
 						<div class="projects-grid">
+
 							<!-- Data Exploration in SQL -->
 							<article class="project-card">
 								<a href="#" class="image fit"><img src="images/sqlqu.jpg" alt="" /></a>
@@ -387,9 +596,22 @@
 									<a href="https://www.kaggle.com/work/code" class="button">VIEW PROJECTS</a>
 								</div>
 							</article>
+
+							<!-- ============================================
+							     FRONTEND PORTAL CARD
+							     ============================================ -->
+							<a href="projects.html" class="frontend-portal">
+								<span class="portal-icon">&#128187;</span>
+								<h3>VIEW FRONTEND &amp; WEB PROJECTS</h3>
+								<p>Explore my freeCodeCamp certifications and responsive web design work</p>
+								<span class="portal-cta">Enter Frontend Grid →</span>
+							</a>
+
 						</div>
 
-						<!-- Contact Information (No Form) -->
+						<!-- ============================================
+						     CONTACT SECTION
+						     ============================================ -->
 						<footer style="background: #f5f5f5; padding: 4rem !important; margin-top: 2rem;">
 							<h2 style="text-align: center; margin-bottom: 3rem;">Get In Touch</h2>
 							<div class="contact-grid">
