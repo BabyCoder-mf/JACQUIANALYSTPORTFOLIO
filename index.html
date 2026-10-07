@@ -11,7 +11,6 @@
 			   PROJECTS GRID — MASONRY (Column Hack)
 			   ============================================ */
 			.projects-grid {
-				/* ✏️ CHANGED: masonry via CSS columns instead of rigid grid rows */
 				display: block;
 				column-count: 2;
 				column-gap: 2rem;
@@ -22,7 +21,6 @@
 				background: #ffffff;
 				border: solid 2px #eeeeee;
 				transition: transform 0.2s ease, box-shadow 0.2s ease;
-				/* ✏️ CHANGED: inline-block + break-inside so cards don't split across columns */
 				display: inline-block;
 				width: 100%;
 				margin-bottom: 2rem;
@@ -239,7 +237,6 @@
 			   FRONTEND PORTAL CARD
 			   ============================================ */
 			.frontend-portal {
-				/* ✏️ CHANGED: now inline-block inside masonry columns */
 				display: inline-block;
 				width: 100%;
 				margin-bottom: 2rem;
@@ -320,20 +317,26 @@
 			}
 
 			/* ============================================
-			   CONTACT GRID
+			   CONTACT GRID — OPTIMIZED (no overlap)
 			   ============================================ */
 			.contact-grid {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-				gap: 2rem;
+				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+				gap: 1.5rem;
 				padding: 2rem 0;
+				width: 100%;
 			}
 
 			.contact-item {
 				text-align: center;
-				padding: 2rem;
+				padding: 1.5rem 1rem;
 				background: #f5f5f5;
 				border: solid 2px #eeeeee;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				min-width: 0;
 				transition: border-color 0.2s ease;
 			}
 
@@ -342,22 +345,29 @@
 			}
 
 			.contact-item .icon {
-				font-size: 2rem;
-				margin-bottom: 1rem;
+				font-size: 1.8rem;
+				margin-bottom: 0.75rem;
 				display: block;
 				color: #212931;
 			}
 
 			.contact-item h3 {
-				margin: 0.5rem 0;
-				font-size: 1rem;
+				margin: 0.25rem 0;
+				font-size: 0.9rem;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
 				color: #212931;
 			}
 
 			.contact-item p, .contact-item a {
 				color: #717981;
 				text-decoration: none;
-				font-size: 0.9rem;
+				font-size: 0.8rem;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 100%;
+				display: block;
 			}
 
 			.contact-item a:hover {
@@ -365,7 +375,7 @@
 			}
 
 			/* ============================================
-			   RESPONSIVE — collapse masonry to 1 column
+			   RESPONSIVE
 			   ============================================ */
 			@media screen and (max-width: 980px) {
 				.flagship-project .flagship-inner {
@@ -375,11 +385,13 @@
 					min-height: 280px;
 					order: -1;
 				}
+				.contact-grid {
+					grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				}
 			}
 
 			@media screen and (max-width: 736px) {
 				.projects-grid {
-					/* ✏️ CHANGED: masonry folds to single column on mobile */
 					column-count: 1;
 					column-gap: 0;
 				}
@@ -410,6 +422,11 @@
 
 				.contact-grid {
 					grid-template-columns: 1fr;
+					gap: 1rem;
+				}
+
+				.contact-item p, .contact-item a {
+					font-size: 0.9rem;
 				}
 			}
 		</style>
@@ -442,10 +459,7 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- ============================================
-						     FLAGSHIP SPOTLIGHT — HR APPLICATION
-						     ✏️ CHANGED: real live demo + code links
-						     ============================================ -->
+						<!-- FLAGSHIP SPOTLIGHT — HR APPLICATION -->
 						<div class="flagship-project">
 							<div class="flagship-inner">
 								<div class="flagship-content">
@@ -465,10 +479,8 @@
 										<span class="project-tag">UI/UX</span>
 									</div>
 									<div class="flagship-actions">
-										<!-- ✏️ CHANGED: live demo -->
 										<a href="https://worknesthr.onrender.com" target="_blank" rel="noopener" class="button primary">LIVE DEMO</a>
-										<!-- ✏️ CHANGED: code link (lnkd.in redirect) -->
-										<a href="https://lnkd.in/p/eG3iASVb" target="_blank" rel="noopener" class="button ghost">VIEW CODE</a>
+										<a href="https://github.com/BabyCoder-mf/WorkNestHR" target="_blank" rel="noopener" class="button ghost">VIEW CODE</a>
 									</div>
 								</div>
 								<div class="flagship-image">
@@ -477,9 +489,7 @@
 							</div>
 						</div>
 
-						<!-- ============================================
-						     DATA & ANALYTICS GRID (Masonry)
-						     ============================================ -->
+						<!-- DATA & ANALYTICS GRID (Masonry) -->
 						<div class="projects-grid">
 
 							<!-- Data Exploration in SQL -->
@@ -496,19 +506,23 @@
 								</div>
 							</article>
 
-							<!-- Bike Sales Dashboard -->
-							<article class="project-card">
-								<a href="#" class="image fit"><img src="images/R%20(1).jpeg" alt="" /></a>
+								<!-- Tableau Portfolio / Uganda Data Briefs -->
+							<article class="project-card" style="border-top: solid 3px #e49138;"> <!-- Optional style accent matching Tableau orange -->
+								<a href="https://tableau.com" target="_blank" class="image dashboard">
+									<img src="images/eac-covid.jpg" alt="Tableau Portfolio" />
+								</a>
 								<div class="card-content">
-									<h3>BIKE SALES DASHBOARD</h3>
-									<p>Interactive Excel dashboard using pivot tables for bike sales analysis</p>
+									<h3>TABLEAU PORTFOLIO &amp; DATA BRIEFS</h3>
+									<p>A collection of interactive visual analytics projects, featuring my Uganda Data Brief series exploring regional demographic and socio-economic data trends.</p>
 									<div class="project-tags">
-										<span class="project-tag">Excel</span>
-										<span class="project-tag">Dashboard</span>
+										<span class="project-tag">Tableau</span>
+										<span class="project-tag">Data Briefs</span>
+										<span class="project-tag">Data Viz</span>
 									</div>
-									<a href="https://1drv.ms/x/s!An154pBeqri4tVW3QGNwgLmaL9sj" class="button">VIEW PROJECT</a>
+									<a href="https://public.tableau.com/app/profile/ntare.jacquiline" target="_blank" class="button">VIEW PORTFOLIO</a>
 								</div>
 							</article>
+
 
 							<!-- KFC Dashboard -->
 							<article class="project-card">
@@ -580,7 +594,7 @@
 								</div>
 							</article>
 
-							<!-- ✏️ CHANGED: Frontend Portal — now sits naturally in masonry flow -->
+							<!-- FRONTEND PORTAL CARD -->
 							<a href="projects.html" class="frontend-portal">
 								<span class="portal-icon">&#128187;</span>
 								<h3>VIEW FRONTEND &amp; WEB PROJECTS</h3>
@@ -590,35 +604,46 @@
 
 						</div>
 
-						<!-- Contact Section -->
+						<!-- CONTACT SECTION -->
 						<footer style="background: #f5f5f5; padding: 4rem !important; margin-top: 2rem;">
 							<h2 style="text-align: center; margin-bottom: 3rem;">Get In Touch</h2>
 							<div class="contact-grid">
+
+								<!-- Location Card -->
 								<div class="contact-item">
-									<i class="icon solid fa-map-marker-alt"></i>
+									<span class="icon fas fa-map-marker-alt"></span>
 									<h3>Location</h3>
-									<p>Nairobi, Kenya</p>
+									<p>Kampala, Uganda</p>
 								</div>
+
+								<!-- Phone Card -->
 								<div class="contact-item">
-									<i class="icon solid fa-phone"></i>
+									<span class="icon fas fa-phone"></span>
 									<h3>Phone</h3>
-									<p>(+254) 748-362-361</p>
+									<p><a href="tel:+256751705622">(+256) 751-705-622</a></p>
 								</div>
+
+								<!-- Email Card -->
 								<div class="contact-item">
-									<i class="icon solid fa-envelope"></i>
+									<span class="icon fas fa-envelope"></span>
 									<h3>Email</h3>
-									<p><a href="mailto:jacquilinentare@gmail.com">jacquilinentare@gmail.com</a></p>
+									<p><a href="mailto:jacquilinentare@gmail.com" title="jacquilinentare@gmail.com">jacquilinentare@gmail.com</a></p>
 								</div>
+
+								<!-- GitHub Card -->
 								<div class="contact-item">
-									<i class="icon brands fa-github"></i>
+									<span class="icon brands fa-github"></span>
 									<h3>GitHub</h3>
-									<p><a href="https://github.com/BabyCoder-mf">@BabyCoder-mf</a></p>
+									<p><a href="https://github.com/BabyCoder-mf" target="_blank" rel="noopener">@BabyCoder-mf</a></p>
 								</div>
+
+								<!-- LinkedIn Card -->
 								<div class="contact-item">
-									<i class="icon brands fa-linkedin"></i>
+									<span class="icon brands fa-linkedin"></span>
 									<h3>LinkedIn</h3>
-									<p><a href="https://www.linkedin.com/in/jacquiline-alphans/">Jacquiline Alphans</a></p>
+									<p><a href="https://www.linkedin.com/in/jacquiline-alphans/" target="_blank" rel="noopener">Jacquiline Alphans</a></p>
 								</div>
+
 							</div>
 						</footer>
 
@@ -626,7 +651,7 @@
 
 				<!-- Copyright -->
 				<div id="copyright">
-					<ul><li>&copy; jacquilinentare</li><li>Portfolio 2024</li></ul>
+					<ul><li>&copy; jacquiline ntare</li><li>Portfolio 2026</li></ul>
 				</div>
 
 			</div>
