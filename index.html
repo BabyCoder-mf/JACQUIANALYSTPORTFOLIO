@@ -8,12 +8,13 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 			/* ============================================
-			   PROJECTS GRID
+			   PROJECTS GRID — MASONRY (Column Hack)
 			   ============================================ */
 			.projects-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-				gap: 2rem;
+				/* ✏️ CHANGED: masonry via CSS columns instead of rigid grid rows */
+				display: block;
+				column-count: 2;
+				column-gap: 2rem;
 				padding: 2rem 0;
 			}
 
@@ -21,9 +22,14 @@
 				background: #ffffff;
 				border: solid 2px #eeeeee;
 				transition: transform 0.2s ease, box-shadow 0.2s ease;
-				height: 100%;
-				display: flex;
-				flex-direction: column;
+				/* ✏️ CHANGED: inline-block + break-inside so cards don't split across columns */
+				display: inline-block;
+				width: 100%;
+				margin-bottom: 2rem;
+				break-inside: avoid;
+				-webkit-column-break-inside: avoid;
+				page-break-inside: avoid;
+				vertical-align: top;
 			}
 
 			.project-card:hover {
@@ -54,15 +60,8 @@
 				display: block;
 			}
 
-			.project-card .image.dashboard img {
-				object-fit: cover;
-				height: 200px;
-				padding: 0;
-			}
-
 			.project-card .card-content {
 				padding: 1.5rem;
-				flex-grow: 1;
 				display: flex;
 				flex-direction: column;
 			}
@@ -77,7 +76,6 @@
 				font-size: 0.9rem;
 				line-height: 1.8;
 				margin-bottom: 1.5rem;
-				flex-grow: 1;
 				color: #717981;
 			}
 
@@ -115,7 +113,6 @@
 				margin: 0 0 3rem 0;
 				background: linear-gradient(135deg, #212931 0%, #2d3a47 100%);
 				border: solid 2px #eeeeee;
-				padding: 0;
 				color: white;
 				overflow: hidden;
 				position: relative;
@@ -238,24 +235,17 @@
 				z-index: 2;
 			}
 
-			.flagship-project .flagship-image::after {
-				content: "";
-				position: absolute;
-				top: -50%;
-				left: -50%;
-				width: 200%;
-				height: 200%;
-				background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-				background-size: 20px 20px;
-				opacity: 0.4;
-			}
-
 			/* ============================================
 			   FRONTEND PORTAL CARD
 			   ============================================ */
 			.frontend-portal {
-				grid-column: 1 / -1;
-				margin-top: 1rem;
+				/* ✏️ CHANGED: now inline-block inside masonry columns */
+				display: inline-block;
+				width: 100%;
+				margin-bottom: 2rem;
+				break-inside: avoid;
+				-webkit-column-break-inside: avoid;
+				page-break-inside: avoid;
 				background: linear-gradient(135deg, #18bfef 0%, #0a9bc4 100%);
 				border: solid 2px #18bfef;
 				padding: 3rem 2rem;
@@ -265,8 +255,8 @@
 				position: relative;
 				overflow: hidden;
 				cursor: pointer;
-				display: block;
 				text-decoration: none;
+				vertical-align: top;
 			}
 
 			.frontend-portal:hover {
@@ -375,7 +365,7 @@
 			}
 
 			/* ============================================
-			   RESPONSIVE
+			   RESPONSIVE — collapse masonry to 1 column
 			   ============================================ */
 			@media screen and (max-width: 980px) {
 				.flagship-project .flagship-inner {
@@ -385,16 +375,13 @@
 					min-height: 280px;
 					order: -1;
 				}
-				.flagship-project::before {
-					font-size: 0.55rem;
-					padding: 0.3rem 3rem;
-					right: -3rem;
-				}
 			}
 
 			@media screen and (max-width: 736px) {
 				.projects-grid {
-					grid-template-columns: 1fr;
+					/* ✏️ CHANGED: masonry folds to single column on mobile */
+					column-count: 1;
+					column-gap: 0;
 				}
 
 				.flagship-project .flagship-content {
@@ -411,13 +398,6 @@
 
 				.flagship-project .flagship-image img {
 					max-height: 220px;
-				}
-
-				.flagship-project::before {
-					top: 1rem;
-					right: -3.5rem;
-					font-size: 0.5rem;
-					padding: 0.25rem 3.5rem;
 				}
 
 				.frontend-portal {
@@ -464,12 +444,13 @@
 
 						<!-- ============================================
 						     FLAGSHIP SPOTLIGHT — HR APPLICATION
+						     ✏️ CHANGED: real live demo + code links
 						     ============================================ -->
 						<div class="flagship-project">
 							<div class="flagship-inner">
 								<div class="flagship-content">
 									<span class="flagship-subtitle">Full-Stack System · HR Management</span>
-									<h2>HR APPLICATION</h2>
+									<h2>WORKNEST HR</h2>
 									<p>
 										A complete, scalable Human Resources management system built end-to-end. 
 										Features employee records, leave management, payroll processing, and 
@@ -484,18 +465,20 @@
 										<span class="project-tag">UI/UX</span>
 									</div>
 									<div class="flagship-actions">
-										<a href="#" class="button primary">LIVE DEMO</a>
-										<a href="#" class="button ghost">VIEW CODE</a>
+										<!-- ✏️ CHANGED: live demo -->
+										<a href="https://worknesthr.onrender.com" target="_blank" rel="noopener" class="button primary">LIVE DEMO</a>
+										<!-- ✏️ CHANGED: code link (lnkd.in redirect) -->
+										<a href="https://lnkd.in/p/eG3iASVb" target="_blank" rel="noopener" class="button ghost">VIEW CODE</a>
 									</div>
 								</div>
 								<div class="flagship-image">
-									<img src="images/R.png" alt="HR Application" />
+									<img src="images/R.png" alt="WorkNest HR Application" />
 								</div>
 							</div>
 						</div>
 
 						<!-- ============================================
-						     DATA & ANALYTICS GRID
+						     DATA & ANALYTICS GRID (Masonry)
 						     ============================================ -->
 						<div class="projects-grid">
 
@@ -597,9 +580,7 @@
 								</div>
 							</article>
 
-							<!-- ============================================
-							     FRONTEND PORTAL CARD
-							     ============================================ -->
+							<!-- ✏️ CHANGED: Frontend Portal — now sits naturally in masonry flow -->
 							<a href="projects.html" class="frontend-portal">
 								<span class="portal-icon">&#128187;</span>
 								<h3>VIEW FRONTEND &amp; WEB PROJECTS</h3>
@@ -609,9 +590,7 @@
 
 						</div>
 
-						<!-- ============================================
-						     CONTACT SECTION
-						     ============================================ -->
+						<!-- Contact Section -->
 						<footer style="background: #f5f5f5; padding: 4rem !important; margin-top: 2rem;">
 							<h2 style="text-align: center; margin-bottom: 3rem;">Get In Touch</h2>
 							<div class="contact-grid">
