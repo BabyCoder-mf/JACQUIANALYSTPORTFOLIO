@@ -2,7 +2,7 @@
 
 Welcome to my portfolio! I'm a data analyst with hands-on experience in **Excel, Power BI, Tableau, SQL, Python**, and modern **frontend development**. My projects demonstrate end-to-end skills — from data transformation and exploration to machine learning, full-stack applications, and responsive web design.
 
-🌐 **Live Portfolio:** [babycoder-mf.github.io](https://babycoder-mf.github.io/)
+🌐 **Live Portfolio:** https://babycoder-mf.github.io/JACQUIANALYSTPORTFOLIO/
 
 ---
 
